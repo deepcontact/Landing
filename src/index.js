@@ -5,10 +5,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import App from './App';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-    <SpeedInsights />
-  </React.StrictMode>
-);
+const path = window.location.pathname;
+if (path === '/login' || path.startsWith('/backoffice')) {
+  const root = ReactDOM.createRoot(document.getElementById('root'));
+  root.render(
+    <React.StrictMode>
+      <App />
+      <SpeedInsights />
+    </React.StrictMode>
+  );
+}
